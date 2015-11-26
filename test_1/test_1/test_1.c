@@ -7,11 +7,20 @@
 
 
 #include <avr/io.h>
+#include <util/delay.h>
 
 int main(void)
 {
+	DDRA = 0xFF;
+	DDRB = 0xFF;
+	DDRC = 0xFF;
+	
     while(1)
     {
-        //TODO:: Please write your application code 
+        PORTB = 0xFF;
+		PORTC = 0x7F;
+		PORTA = 0x80;
+		
+		_delay_ms(1000);
     }
 }
