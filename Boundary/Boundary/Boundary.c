@@ -1039,6 +1039,446 @@ void draw_blinking_pattern()
 			}
 		}
 	}
+	
+	//PLAYER 2
+	
+	if(current_player==2 && current_x==1 && current_y==1)
+	{
+		
+		temp_col[0]=col_R[1];
+		temp_col[1]=col_R[2];
+		temp_col[2]=col_R[3];
+		temp_col[3]=col_R[4];
+		
+		int8_t port_a_temp_pattern[]={
+			0x08,0x10,0x20,0x40
+		};
+		
+		int8_t loop;
+		for(loop=0;loop<10;loop++)
+		{
+			if(loop%2==0)
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = port_a_temp_pattern[i];
+					_delay_ms(0.20);
+				}
+			}
+			else
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = 0x00;
+					
+					_delay_ms(0.20);
+				}
+				
+				draw_boundary();
+				draw_occupied_positions();
+				_delay_ms(1);
+			}
+		}
+	}
+	
+	else if(current_player==2 && current_x==1 && current_y==2)
+	{
+		
+		temp_col[0]=col_R[6];
+		temp_col[1]=col_R[7];
+		temp_col[2]=col_R[8];
+		temp_col[3]=col_R[9];
+		
+		int8_t port_a_temp_pattern[]={
+			0x08,0x10,0x20,0x40
+		};
+		
+		int8_t loop;
+		for(loop=0;loop<10;loop++)
+		{
+			if(loop%2==0)
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = port_a_temp_pattern[i];
+					_delay_ms(0.20);
+				}
+			}
+			else
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = 0x00;
+					
+					_delay_ms(0.20);
+				}
+				
+				draw_boundary();
+				draw_occupied_positions();
+				_delay_ms(1);
+			}
+		}
+	}
+	
+	else if(current_player==2 && current_x==1 && current_y==3)
+	{
+		
+		temp_col[0]=col_R[11];
+		temp_col[1]=col_R[12];
+		temp_col[2]=col_R[13];
+		temp_col[3]=col_R[14];
+		
+		int8_t port_a_temp_pattern[]={
+			0x08,0x10,0x20,0x40
+		};
+		
+		int8_t loop;
+		for(loop=0;loop<10;loop++)
+		{
+			if(loop%2==0)
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = port_a_temp_pattern[i];
+					_delay_ms(0.20);
+				}
+			}
+			else
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = 0x00;
+					
+					_delay_ms(0.20);
+				}
+				
+				draw_boundary();
+				draw_occupied_positions();
+				_delay_ms(1);
+			}
+		}
+	}
+	
+	else if(current_player==2 && current_x==2 && current_y==1)
+	{
+		
+		temp_col[0]=col_R[1];
+		temp_col[1]=col_R[2];
+		temp_col[2]=col_R[3];
+		temp_col[3]=col_R[4];
+		
+		int8_t port_a_temp_pattern[]={
+			0x00,0x00,0x01,0x02
+		};
+		
+		int8_t port_b_temp_pattern[]={
+			0x40,0x80,0x00,0x00
+		};
+		
+		int8_t loop;
+		for(loop=0;loop<10;loop++)
+		{
+			if(loop%2==0)
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = port_a_temp_pattern[i];
+					_delay_ms(0.25);
+					
+					PORTA = 0x00;
+					PORTB = port_b_temp_pattern[i];
+					_delay_ms(0.25);
+					
+				}
+			}
+			else
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = 0x00;
+					
+					_delay_ms(0.20);
+				}
+				
+				draw_boundary();
+				draw_occupied_positions();
+				_delay_ms(1);
+			}
+		}
+	}
+	
+	else if(current_player==2 && current_x==2 && current_y==2)
+	{
+		
+		temp_col[0]=col_R[6];
+		temp_col[1]=col_R[7];
+		temp_col[2]=col_R[8];
+		temp_col[3]=col_R[9];
+		
+		int8_t port_a_temp_pattern[]={
+			0x00,0x00,0x01,0x02
+		};
+		
+		int8_t port_b_temp_pattern[]={
+			0x40,0x80,0x00,0x00
+		};
+		
+		int8_t loop;
+		for(loop=0;loop<10;loop++)
+		{
+			if(loop%2==0)
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = port_a_temp_pattern[i];
+					_delay_ms(0.25);
+					
+					PORTA = 0x00;
+					PORTB = port_b_temp_pattern[i];
+					_delay_ms(0.25);
+					
+				}
+			}
+			else
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = 0x00;
+					
+					_delay_ms(0.20);
+				}
+				
+				draw_boundary();
+				draw_occupied_positions();
+				_delay_ms(1);
+			}
+		}
+	}
+	
+	else if(current_player==2 && current_x==2 && current_y==3)
+	{
+		
+		temp_col[0]=col_R[11];
+		temp_col[1]=col_R[12];
+		temp_col[2]=col_R[13];
+		temp_col[3]=col_R[14];
+		
+		int8_t port_a_temp_pattern[]={
+			0x00,0x00,0x01,0x02
+		};
+		
+		int8_t port_b_temp_pattern[]={
+			0x40,0x80,0x00,0x00
+		};
+		
+		int8_t loop;
+		for(loop=0;loop<10;loop++)
+		{
+			if(loop%2==0)
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = port_a_temp_pattern[i];
+					_delay_ms(0.25);
+					
+					PORTA = 0x00;
+					PORTB = port_b_temp_pattern[i];
+					_delay_ms(0.25);
+					
+				}
+			}
+			else
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = 0x00;
+					
+					_delay_ms(0.20);
+				}
+				
+				draw_boundary();
+				draw_occupied_positions();
+				_delay_ms(1);
+			}
+		}
+	}
+	
+	else if(current_player==2 && current_x==3 && current_y==1)
+	{
+		temp_col[0]=col_R[1];
+		temp_col[1]=col_R[2];
+		temp_col[2]=col_R[3];
+		temp_col[3]=col_R[4];
+		
+		int8_t port_b_temp_pattern[]={
+			0x02,0x04,0x08,0x10
+		};
+		
+		
+		
+		int8_t loop;
+		for(loop=0;loop<10;loop++)
+		{
+			if(loop%2==0)
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTA = 0x00;
+					PORTB = port_b_temp_pattern[i];
+					_delay_ms(0.25);
+					
+				}
+			}
+			else
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = 0x00;
+					
+					_delay_ms(0.20);
+				}
+				
+				draw_boundary();
+				draw_occupied_positions();
+				_delay_ms(1);
+			}
+		}
+	}
+	
+	else if(current_player==2 && current_x==3 && current_y==2)
+	{
+		temp_col[0]=col_R[6];
+		temp_col[1]=col_R[7];
+		temp_col[2]=col_R[8];
+		temp_col[3]=col_R[9];
+		
+		int8_t port_b_temp_pattern[]={
+			0x02,0x04,0x08,0x10
+		};
+		
+		
+		
+		int8_t loop;
+		for(loop=0;loop<10;loop++)
+		{
+			if(loop%2==0)
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTA = 0x00;
+					PORTB = port_b_temp_pattern[i];
+					_delay_ms(0.25);
+					
+				}
+			}
+			else
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = 0x00;
+					
+					_delay_ms(0.20);
+				}
+				
+				draw_boundary();
+				draw_occupied_positions();
+				_delay_ms(1);
+			}
+		}
+	}
+	
+	else if(current_player==2 && current_x==3 && current_y==3)
+	{
+		temp_col[0]=col_R[11];
+		temp_col[1]=col_R[12];
+		temp_col[2]=col_R[13];
+		temp_col[3]=col_R[14];
+		
+		int8_t port_b_temp_pattern[]={
+			0x02,0x04,0x08,0x10
+		};
+		
+		
+		
+		int8_t loop;
+		for(loop=0;loop<10;loop++)
+		{
+			if(loop%2==0)
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTA = 0x00;
+					PORTB = port_b_temp_pattern[i];
+					_delay_ms(0.25);
+					
+				}
+			}
+			else
+			{
+				for(i=0;i<4;i++)
+				{
+					PORTD = temp_col[i];
+					
+					PORTB = 0x00;
+					PORTA = 0x00;
+					
+					_delay_ms(0.20);
+				}
+				
+				draw_boundary();
+				draw_occupied_positions();
+				_delay_ms(1);
+			}
+		}
+	}
 }
 
 
@@ -1055,20 +1495,58 @@ int main(void)
 	
 	init_control();
 	
+	int8_t PC;
+	
+	int8_t left_button;
+	
+	//int8_t up_button,down_button,left_button,right_button,confirm_button;
+	
+	left_button = 0x01;
+	//down_button = 0xFD;
+	//up_button = 0xFB;
+	//right_button = 0xF7;
+	//confirm_button = 0xEF;
+	/************************************************************************/
+	/* TEST BLOCK                                                           */
+	/************************************************************************/
+	current_player=2;
+	current_x=2;
+	current_y=2;
+	
+	/************************************************************************/
+	/* END OF TEST BLOCK                                                    */
+	/************************************************************************/
+	
     while(1)
     {
-        //TODO:: Please write your application code
+		
+		PC = PORTC;
+		if( (PC & left_button) != 0x00)
+		{
+			current_x=1;
+			current_y=1;
+		}
+		/*
+		else if((PC | up_button) == up_button)
+		{
+			current_x--;
+			if(current_x<1) current_x=1;
+		}
+		else if((PC | down_button) == down_button)
+		{
+			current_x++;
+		}
+		else if((PC | right_button) == right_button)
+		{
+			current_y++;
+		}
+		else if((PC|confirm_button) == confirm_button)
+		{
+			//change control
+		}
+		*/
 		draw_boundary();
 		draw_occupied_positions();
-		/************************************************************************/
-		/* TEST BLOCK                                                           */
-		/************************************************************************/
-		current_player=1;
-		current_x=3;
-		current_y=3;
-		/************************************************************************/
-		/* END OF TEST BLOCK                                                    */
-		/************************************************************************/
 		draw_blinking_pattern();	
     }
 }
