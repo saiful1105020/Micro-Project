@@ -10,33 +10,39 @@
 #define F_CPU 1000000
 #include <util/delay.h>
 
+int8_t red[]={
+	0x00, 0x00, 0x18 , 0x18, 0x18 , 0x18 , 0x00, 0x00
+};
+
+int8_t green[]={
+	0x3C , 0x3C , 0x24 , 0x24 , 0x24 , 0x24 , 0x3c , 0x3c
+};
+
 int main(void)
 {
 	DDRA = 0xFF;
 	DDRB = 0xFF;
 	DDRC = 0xFF;
+	DDRD = 0xFF;
 	
     while(1)
     {
-		int8_t row = 0b01111111;
 		int8_t i;
 		
 		for(i=0;i<8;i++)
 		{
-			int8_t temp = row>>(i);
+			int8_t temp = ~(1<<i);
 			
-			PORTB = 0xFF;
-			PORTC = temp;
-			PORTA = 0xFF;
-			
-			_delay_ms(1000);
-			
-			PORTC = 0xFF;
 			PORTB = temp;
-			PORTA = 0xFF;
+			PORTD = 0xFF;
+			PORTA = green[i];
 			
-			_delay_ms(1000);
+			PORTD = temp;
+			PORTB = 0xFF;
+			PORTA = red[i];
 			
+			_delay_ms(50);
 		}
+		
     }
 }
