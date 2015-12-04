@@ -58,6 +58,8 @@ void init_control()
 /************************************************************************/
 void change_control()
 {
+	position[current_x][current_y]=current_player;
+	
 	if(current_player==1)
 	{
 		current_player = 2;
@@ -1520,6 +1522,9 @@ int main(void)
     while(1)
     {
 		
+		//Check Win
+		//if win, show animation
+		//else
 		PC = PORTC;
 		if( (PC & left_button) != 0x00)
 		{
